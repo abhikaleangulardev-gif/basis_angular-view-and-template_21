@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Child } from "./child/child";
 
 @Component({
   selector: 'app-ng-content',
-  imports: [],
+  imports: [Child],
   templateUrl: './ng-content.html',
   styleUrl: './ng-content.css',
 })
