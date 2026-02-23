@@ -1,0 +1,10 @@
+.custom-menubar {
+  border-bottom: 3px solid #3b82f6 !important; /* blue border */
+}
+
+/* active menu item */
+:host ::ng-deep .custom-menubar .p-menuitem-link.router-link-active {
+  border-bottom: 3px solid #3b82f6;
+  border-radius: 6px 6px 0 0;
+  background-color: rgba(59,130,246,0.08);
+}
