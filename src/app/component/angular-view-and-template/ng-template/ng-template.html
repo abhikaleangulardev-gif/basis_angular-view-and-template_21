@@ -1,1 +1,95 @@
-<p>ng-template works!</p>
+<!-- @if (isLogginPage()) {
+<div>
+    Welcome User!
+    <button (click)="onclick()">Logout</button>
+</div>
+}@else {
+   <ng-container *ngTemplateOutlet="loginTemplate"></ng-container>
+   <button class="btn btn-secondary btn-sm" (click)="onclick()">click login</button>
+}
+
+
+<ng-template #loginTemplate>
+    <pre class="text-success"><b>Please Login First</b></pre>
+</ng-template> -->
+
+<!-- or -->
+
+@if (isLogginPage()) {
+<div>
+    Welcome User!
+</div>
+}@else {
+<ng-container *ngTemplateOutlet="loginTemplate"></ng-container>
+}
+
+<ng-template #loginTemplate>
+    <pre class="text-success"><b>Please Login First</b></pre>
+</ng-template>
+
+<hr>
+
+<!-- example 2 -->
+
+<div *ngIf="isAdmin(); then adminBlock;else userBlock"></div>
+
+<button class="btn btn-info btn-sm" (click)="onChangeBlock()">Change Block</button>
+
+<!-- adminBlock -->
+<ng-template #adminBlock>
+    <h3>Admin Block</h3>
+</ng-template>
+
+
+<!-- userBlock -->
+<ng-template #userBlock>
+    <h3>User Block</h3>
+</ng-template>
+
+<hr>
+<!-- Example 3: Reusable Template using ngTemplateOutlet
+
+👉 This is very important for dynamic UI. -->
+
+<!-- condition basic rendering -->
+<ng-template #CardTemplate let-name>
+    <div class="card">
+        Hello {{name}}
+    </div>
+</ng-template>
+
+
+
+<!-- display abhishek -->
+<ng-container *ngTemplateOutlet="CardTemplate; context:{$implicit:'Abhishek'}"></ng-container>
+
+
+<!-- display Mohit -->
+<ng-container *ngTemplateOutlet="CardTemplate; context:{$implicit:'mohit'}"></ng-container>
+
+<hr>
+<!-- 
+Example 4: Passing Multiple Values -->
+
+<!-- passing name and age -->
+<!-- <ng-template #studentTemplate let-name let-age="age">
+    <p>{{name}} - {{age}}</p>
+</ng-template>
+
+
+<ng-container *ngTemplateOutlet="studentTemplate; context:{$implicit:'abhishek',age: 33}"></ng-container>
+
+<ng-container *ngTemplateOutlet="studentTemplate; context:{$implicit:'mohit',age:29}"></ng-container>
+
+<ng-container *ngTemplateOutlet="studentTemplate; context:{$implicit:'devyani',age:32}"></ng-container> -->
+
+<ng-template #studentTemplate let-name="name" let-age="age">
+    <p>{{name}} - {{age}}</p>
+</ng-template>
+
+
+<ng-container *ngTemplateOutlet="studentTemplate; context:{name:'abhishek',age: 33}"></ng-container>
+
+<ng-container *ngTemplateOutlet="studentTemplate; context:{name:'mohit',age:29}"></ng-container>
+
+<ng-container *ngTemplateOutlet="studentTemplate; context:{name:'devyani',age:32}"></ng-container>
