@@ -41,6 +41,7 @@
     "@angular/build": "^21.0.2",
     "@angular/cli": "^21.0.2",
     "@angular/compiler-cli": "^21.0.0",
+    "angular-view-and-template": "file:",
     "typescript": "~5.9.2"
   }
 }
