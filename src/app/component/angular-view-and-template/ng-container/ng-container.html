@@ -1,1 +1,11 @@
 <p>ng-container works!</p>
+
+<button class="btn btn-secondary btn-sm" (click)="onClick()">click</button>
+
+@if (isActive()) {
+<ng-container>
+    @for (stds of students; track $index) {
+    <div>{{stds}}</div>
+    }
+</ng-container>
+}
