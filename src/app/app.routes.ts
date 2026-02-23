@@ -7,13 +7,6 @@ export const routes: Routes = [
         pathMatch: 'full'
     },
     {
-        path: 'view-encapsulation',
-        loadComponent: () =>
-            import('./component/angular-view-and-template/view-encapsulation/view-encapsulation')
-                .then(m => m.ViewEncapsulation)
-    },
-
-    {
         path: 'ng-template',
         loadComponent: () =>
             import('./component/angular-view-and-template/ng-template/ng-template')
@@ -82,9 +75,4 @@ export const routes: Routes = [
             import('./component/angular-view-and-template/embedded-view/embedded-view')
                 .then(m => m.EmbeddedView)
     },
-    // wildcard route
-    {
-        path: '**',
-        redirectTo: 'view-encapsulation'
-    }
 ];

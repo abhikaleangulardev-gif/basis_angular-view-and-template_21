@@ -14,8 +14,7 @@ export class Header implements OnInit {
 
   ngOnInit() {
     this.items = [
-      { label: 'View Encapsulation', routerLink: '/view-encapsulation', routerLinkActiveOptions: { exact: true } },
-      { label: 'Ng Template', routerLink: '/ng-template' },
+      { label: 'Ng Template', routerLink: '/ng-template', routerLinkActiveOptions: { exact: true }  },
       { label: 'Ng Content', routerLink: '/ng-content' },
       { label: 'Ng Container', routerLink: '/ng-container' },
       { label: 'Ng Template Outlet', routerLink: '/ng-template-outlet' },
